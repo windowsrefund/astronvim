@@ -43,6 +43,13 @@ local config = {
       ["p00f/nvim-ts-rainbow"] = { disable = true },
     },
 
+    bufferline = {
+      options = {
+        show_close_icon = false,
+        show_buffer_close_icons = false,
+      },
+    },
+
     better_escape = {
       mapping = { "jk"},
     },
