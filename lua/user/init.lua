@@ -41,6 +41,7 @@ local config = {
 
       -- Disable these plugins
       ["p00f/nvim-ts-rainbow"] = { disable = true },
+      ["stevearc/aerial.nvim"] = { disable = true },
     },
 
     bufferline = {
