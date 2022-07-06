@@ -55,6 +55,21 @@ local config = {
       mapping = { "jk"},
     },
 
+    ["neo-tree"] = {
+      window = {
+        width = 40,
+      },
+      event_handlers = {
+        {
+          event = "file_opened",
+          handler = function(file_path)
+            -- auto close
+            require("neo-tree").close_all()
+          end
+        },
+      },
+    },
+
     ["null-ls"] = function(config)
       local null_ls = require "null-ls"
       config.sources = {
@@ -94,6 +109,7 @@ local config = {
     i = {
       -- rather than using ESC and o, perhaps use C-o then o
       ["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },
+      ["aa"] = { "<C-o>A", desc = "Jump to end of line and append in insert mode" },
     }
   },
 }
