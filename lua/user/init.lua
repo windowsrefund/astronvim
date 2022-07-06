@@ -2,6 +2,7 @@ local config = {
 
   options = {
     opt = {
+      foldenable = false,
       foldmethod = "expr",
       foldexpr = "nvim_treesitter#foldexpr()",
     },
