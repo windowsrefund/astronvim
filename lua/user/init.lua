@@ -110,7 +110,7 @@ local config = {
     i = {
       -- rather than using ESC and o, perhaps use C-o then o
       ["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },
-      ["aa"] = { "<C-o>A", desc = "Jump to end of line and append in insert mode" },
+      ["jl"] = { "<C-o>$", desc = "Jump to end of line while in insert mode" },
     }
   },
 }
