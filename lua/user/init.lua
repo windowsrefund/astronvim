@@ -1,5 +1,19 @@
 local config = {
 
+  -- AstroNvim updates
+  updater = {
+    remote = "origin",
+    channel = "nightly",
+    version = "latest",
+    branch = "main",
+    commit = nil,
+    pin_plugins = nil,
+    skip_prompts = false,
+    show_changelog = true,
+  },
+
+  colorscheme = "catppuccin",
+
   options = {
     opt = {
       foldenable = false,
@@ -40,9 +54,16 @@ local config = {
         end,
       },
 
+      {
+        "mfussenegger/nvim-dap",
+      },
+
+      {
+        "mfussenegger/nvim-dap-python",
+      },
       -- Disable these plugins
       ["p00f/nvim-ts-rainbow"] = { disable = true },
-      ["stevearc/aerial.nvim"] = { disable = true },
+      ["stevearc/aerial.nvim"] = { disable = true }, -- this screws up keybindings like '{' and '}' and maybe folding too
     },
 
     bufferline = {
@@ -63,7 +84,7 @@ local config = {
       event_handlers = {
         {
           event = "file_opened",
-          handler = function(file_path)
+          handler = function(_)
             -- auto close
             require("neo-tree").close_all()
           end
@@ -91,11 +112,21 @@ local config = {
     end,
   },
 
+  cmp = {
+    source_priority = {
+      nvim_lsp = 1000,
+      luasnip = 750,
+      buffer = 500,
+      path = 250,
+    },
+  },
+
   ["which-key"] = {
     register_mappings = {
       n = { -- normal mode
         ["<leader>"] = { -- leader prefix
           ["r"] = { "<cmd>RunCodeFile<cr>", "Run code from file"},
+          ["z"] = { "za", "Toggle fold under cursor"},
         },
       },
       v = { -- visual mode
@@ -105,6 +136,18 @@ local config = {
       }
     },
   },
+
+  -- Extend LSP configuration
+  lsp = {
+    ["server-settings"] = {
+      python = {
+        analysis = {
+          typeCheckingMode = "on",
+        },
+      },
+    },
+  },
+
 
   mappings = {
     i = {
