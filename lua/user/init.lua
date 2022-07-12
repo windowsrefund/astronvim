@@ -131,6 +131,8 @@ local config = {
         mapping = {
           ["<C-j>"] = cmp.config.disable,
           ["<C-k>"] = cmp.config.disable,
+	  ["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+	  ["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         },
       })
     end,
@@ -211,7 +213,6 @@ local config = {
 
   mappings = {
     i = {
-      -- rather than using ESC and o, perhaps use C-o then o
       ["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },
       ["jl"] = { "<C-o>$", desc = "Jump to end of line while in insert mode" },
     }
