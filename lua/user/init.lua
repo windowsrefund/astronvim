@@ -18,6 +18,7 @@ local config = {
     opt = {
       foldenable = false,
       foldmethod = "expr",
+      foldlevel = 99,
       foldexpr = "nvim_treesitter#foldexpr()",
     },
   },
@@ -169,18 +170,22 @@ local config = {
         null_ls.builtins.formatting.black,
       }
       config.on_attach = function(client)
-        if client.server_capabilities.documentFormattingProvider then
+        if client.resolved_capabilities.document_formatting then
           vim.api.nvim_create_autocmd("BufWritePre", {
             desc = "Auto format before save",
             pattern = "<buffer>",
-            callback = function()
-              vim.lsp.buf.format()
-            end,
+            callback = vim.lsp.buf.formatting_sync,
           })
         end
       end
       return config
     end,
+
+    ["nvim-lsp-installer"] = {
+      ensure_installed = {
+        "terraformls"
+      },
+    },
   },
 
   ["which-key"] = {
