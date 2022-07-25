@@ -62,6 +62,10 @@ local config = {
       {
         "mfussenegger/nvim-dap-python",
       },
+      {
+        "ray-x/lsp_signature.nvim",
+      },
+
       -- Disable these plugins
       ["p00f/nvim-ts-rainbow"] = { disable = true },
       ["stevearc/aerial.nvim"] = { disable = true }, -- this screws up keybindings like '{' and '}' and maybe folding too
@@ -95,6 +99,7 @@ local config = {
         Operator = " ",
         TypeParameter = " ",
       }
+
       local cmp = require "cmp"
 
       return vim.tbl_deep_extend("force", config, {
@@ -106,8 +111,7 @@ local config = {
         },
         window = {
           documentation = {
-            -- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-            border = { " ", " ", " ", " ", " ", " ", " ", " " },
+            border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
           },
         },
         formatting = {
@@ -124,7 +128,6 @@ local config = {
               latex_symbols = "LaTeX",
               cmp_tabnine = "Tabnine",
               path = "Path",
-              emoji = "Emoji",
             })[entry.source.name]
             return vim_item
           end,
@@ -132,8 +135,8 @@ local config = {
         mapping = {
           ["<C-j>"] = cmp.config.disable,
           ["<C-k>"] = cmp.config.disable,
-	  ["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-	  ["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+	        ["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+	        ["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         },
       })
     end,
@@ -181,9 +184,18 @@ local config = {
       return config
     end,
 
+    treesitter = {
+      ensure_installed = { 
+        "lua",
+        "hcl",
+      },
+    },
+
     ["nvim-lsp-installer"] = {
       ensure_installed = {
-        "terraformls"
+        "bashls", -- bash
+        "sumneko_lua", -- lua
+        "terraformls", -- terraform
       },
     },
   },
@@ -193,7 +205,6 @@ local config = {
       n = { -- normal mode
         ["<leader>"] = { -- leader prefix
           ["r"] = { "<cmd>RunCodeFile<cr>", "Run code from file"},
-          ["z"] = { "za", "Toggle fold under cursor"},
         },
       },
       v = { -- visual mode
@@ -215,6 +226,9 @@ local config = {
     },
   },
 
+  diagnostics = {
+    virtual_text = false, -- prevent diagnostics from jumping onto page. Use gl to hover instead.
+  },
 
   mappings = {
     i = {
@@ -222,6 +236,19 @@ local config = {
       ["jl"] = { "<C-o>$", desc = "Jump to end of line while in insert mode" },
     }
   },
+
+  -- This function is run last
+  -- It provides a good place to setup autogroups/autocommands and custom filetypes.
+  polish = function()
+
+    -- Custom filetypes
+    vim.filetype.add {
+      extension = {
+        tf = "terraform",
+        tfvars = "terraform-vars",
+      },
+    }
+  end,
 }
 
 return config
