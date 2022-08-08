@@ -17,8 +17,11 @@ return {
   extensions = {
     file_browser = {
       border = false,
+      disable_devicons = true,
       initial_mode = "normal",
       previewer = false,
+      prompt_prefix = '',
+      prompt_title = false,
       theme = "dropdown",
       -- map l to enter
       path = "%:p:h",
