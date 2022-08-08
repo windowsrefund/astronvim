@@ -1,47 +1,17 @@
 return {
-  ["p00f/nvim-ts-rainbow"] = { disable = true },
+  -- built-ins
   ["stevearc/aerial.nvim"] = { disable = true }, -- this screws up keybindings like '{' and '}' and maybe folding too
+  ["goolord/alpha-nvim"] = { disable = true },
+  ["p00f/nvim-ts-rainbow"] = { disable = true },
   ["famiu/bufdelete.nvim"] = { disable = true },
-
-  [ "iamcco/markdown-preview.nvim" ] = {
-    run = function()
-      vim.fn["mkdp#util#install"](0)
-    end,
-    ft = {
-      "markdown",
-    },
-  },
-
-  [ "arjunmahishi/run-code.nvim" ] = {
-    config = function()
-      require('run-code').setup {
-        output = {
-          buffer = false,
-          split_cmd = '20split',
-        },
-      }
-    end,
-  },
-
-  -- Better quickfix window
-  ["kevinhwang91/nvim-bqf"] = {
-    ft = "qf",
-    config = function()
-      require("bqf").setup()
-    end,
-  },
-
-  [ "catppuccin/nvim" ] = {
-    as = "catppuccin",
-      config = function()
-        vim.g.catppuccin_flavour = "macchiato"
-        vim.cmd[[colorscheme catppuccin]]
-      end,
-  },
-
-  [ "ray-x/lsp_signature.nvim" ] = {
-    config = function()
-      require('lsp_signature').setup()
-    end,
-  },
+  ["nvim-neo-tree/neo-tree.nvim"] = { disable = true },
+  -- mine
+  ["andymass/vim-matchup"] = { after = "nvim-treesitter" },
+  ["arjunmahishi/run-code.nvim"] = { config = require "user.plugins.run-code" },
+  ["kevinhwang91/nvim-bqf"] = { ft = "qf", config = require "user.plugins.nvim-bqf" },
+  ["catppuccin/nvim"] = { as = "catppuccin", config = require "user.plugins.catppuccin" },
+  ["iamcco/markdown-preview.nvim"] = { ft = "markdown", run = require "user.plugins.markdown-preview" },
+  ["nvim-telescope/telescope-file-browser.nvim"] = { after = "telescope.nvim", config = require "user.plugins.telescope-file-browser" },
+  ["ethanholz/nvim-lastplace"] = { event = "BufRead", config = require "user.plugins.nvim-lastplace" },
+  ["ur4ltz/surround.nvim"] = { config = require "user.plugins.surround" },
 }

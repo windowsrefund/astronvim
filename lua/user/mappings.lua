@@ -1,7 +1,38 @@
 return {
   n = {
-    ["<leader>ff"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", desc = "Find files" },
-    ["<leader>v"] = { ":e ~/.config/astronvim/lua/user<CR>", desc = "Edit configuration" },
+    -- disable default bindings
+    ["<C-Down>"] = false,
+    ["<C-Left>"] = false,
+    ["<C-Right>"] = false,
+    ["<C-Up>"] = false,
+    ["<C-q>"] = false,
+    ["<C-s>"] = false,
+    ["<"] = false,
+    [">"] = false,
+    ["<leader>h"] = false,
+    ["<C-\\>"] = false,
+    ["<leader>fh"] = false,
+    ["<leader>fm"] = false,
+    ["<leader>fn"] = false,
+    ["<leader>fo"] = false,
+    ["<leader>sb"] = false,
+    ["<leader>sc"] = false,
+    ["<leader>sh"] = false,
+    ["<leader>sk"] = false,
+    ["<leader>sm"] = false,
+    ["<leader>sn"] = false,
+    ["<leader>sr"] = false,
+    -- navigating wrapped lines
+    j = { "gj", desc = "Navigate down" },
+    k = { "gk", desc = "Navigate down" },
+    -- easy splits
+    ["\\"] = { "<cmd>split<cr>", desc = "Horizontal split" },
+    ["|"] = { "<cmd>vsplit<cr>", desc = "Vertical split" },
+    -- better increment/decrement
+    ["-"] = { "<c-x>", desc = "Descrement number" },
+    ["+"] = { "<c-a>", desc = "Increment number" },
+    ["<leader>fb"] = { ":Telescope file_browser<CR>", desc = "File Browser" },
+    ["<leader>v"] = { ":Telescope file_browser path=~/.config/astronvim/lua/user<CR>", desc = "Edit configuration" },
     ["<leader>r"] = { "<cmd>RunCodeFile<cr>", desc="Run code from file" },
   },
   i = {
