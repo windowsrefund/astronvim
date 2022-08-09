@@ -13,5 +13,5 @@ return {
   ["iamcco/markdown-preview.nvim"] = { ft = "markdown", run = require "user.plugins.markdown-preview" },
   ["nvim-telescope/telescope-file-browser.nvim"] = { after = "telescope.nvim", config = require "user.plugins.telescope-file-browser" },
   ["ethanholz/nvim-lastplace"] = { event = "BufRead", config = require "user.plugins.nvim-lastplace" },
-  ["ur4ltz/surround.nvim"] = { config = require "user.plugins.surround" },
+  ["kylechui/nvim-surround"] = { config = require "user.plugins.nvim-surround" },
 }
