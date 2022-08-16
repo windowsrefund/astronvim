@@ -1,6 +1,5 @@
 return {
   -- built-ins
-  ["stevearc/aerial.nvim"] = { disable = true }, -- this screws up keybindings like '{' and '}' and maybe folding too
   ["goolord/alpha-nvim"] = { disable = true },
   ["p00f/nvim-ts-rainbow"] = { disable = true },
   ["famiu/bufdelete.nvim"] = { disable = true },
@@ -14,4 +13,5 @@ return {
   ["nvim-telescope/telescope-file-browser.nvim"] = { after = "telescope.nvim", config = require "user.plugins.telescope-file-browser" },
   ["ethanholz/nvim-lastplace"] = { event = "BufRead", config = require "user.plugins.nvim-lastplace" },
   ["kylechui/nvim-surround"] = { config = require "user.plugins.nvim-surround" },
+  ["hrsh7th/cmp-nvim-lsp-signature-help"] = { config = require "user.plugins.cmp-nvim-lsp-signature-help" },
 }

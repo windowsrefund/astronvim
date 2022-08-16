@@ -31,7 +31,7 @@ return {
     -- better increment/decrement
     ["-"] = { "<c-x>", desc = "Descrement number" },
     ["+"] = { "<c-a>", desc = "Increment number" },
-    ["<leader>fb"] = { ":Telescope file_browser<CR>", desc = "File Browser" },
+    ["<leader>b"] = { ":Telescope file_browser<CR>", desc = "File Browser" },
     ["<leader>v"] = { ":Telescope file_browser path=~/.config/astronvim/lua/user<CR>", desc = "Edit configuration" },
     ["<leader>r"] = { "<cmd>RunCodeFile<cr>", desc="Run code from file" },
   },
