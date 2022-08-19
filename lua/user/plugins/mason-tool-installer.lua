@@ -1,8 +1,8 @@
 return {
   ensure_installed = {
-    "black",
-    "isort",
+    "autopep8",
     "debugpy", -- something related to DAP
+    "flake8",
     "shellcheck",
     "shfmt",
     "stylua",
