@@ -1,4 +1,3 @@
--- Use in order: lsp, treesitter, and then finally indent
 return function()
 	local ftMap = {
 		vim = "indent",

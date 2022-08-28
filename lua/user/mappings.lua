@@ -29,17 +29,16 @@ return {
 		["\\"] = { "<cmd>split<cr>", desc = "Horizontal split" },
 		["|"] = { "<cmd>vsplit<cr>", desc = "Vertical split" },
 		-- better increment/decrement
-		["-"] = { "<c-x>", desc = "Descrement number" },
-		["+"] = { "<c-a>", desc = "Increment number" },
-		["<leader>b"] = { ":Telescope file_browser<CR>", desc = "File Browser" },
-		["<leader>v"] = {
-			":Telescope file_browser path=~/.config/astronvim/lua/user<CR>",
-			desc = "Edit configuration",
-		},
+		["<leader>-"] = { "<c-x>", desc = "Descrement number" },
+		["<leader>+"] = { "<c-a>", desc = "Increment number" },
+		-- window movement
+		["<leader>m"] = { "<c-w>", desc = "Window movement", silent = true },
+		-- code runner
 		["<leader>r"] = { "<cmd>RunCodeFile<cr>", desc = "Run code from file" },
-		-- folding with nvim-ufo
-		-- ["zR"] = { require("ufo").openAllFolds },
-		-- ["zM"] = { require("ufo").closeAllFolds },
+		-- edit astronvim configs
+		["<leader>a"] = { ":Telescope file_browser path=~/.config/astronvim/lua/user<CR>", desc = "Edit configuration" },
+		-- fie browser
+		["-"] = { "<cmd>Telescope file_browser grouped=true<CR>", desc = "File Browser", silent = true },
 	},
 	i = {
 		["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },
