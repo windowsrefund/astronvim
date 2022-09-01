@@ -36,7 +36,11 @@ return {
 		-- code runner
 		["<leader>r"] = { "<cmd>RunCodeFile<cr>", desc = "Run code from file" },
 		-- edit astronvim configs
-		["<leader>a"] = { ":Telescope file_browser path=~/.config/astronvim/lua/user<CR>", desc = "Edit configuration" },
+		["<leader>a"] = {
+			":Telescope file_browser path=~/.config/astronvim/lua/user grouped=true<CR>",
+			desc = "Edit configuration",
+			silent = true,
+		},
 		-- fie browser
 		["-"] = { "<cmd>Telescope file_browser grouped=true<CR>", desc = "File Browser", silent = true },
 	},
