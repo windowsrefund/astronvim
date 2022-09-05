@@ -16,14 +16,14 @@ return {
 	},
 	extensions = {
 		file_browser = {
+			hijack_netrw = true,
 			border = true,
 			disable_devicons = true,
-			initial_mode = "normal",
+			initial_mode = "normal", -- insert or normal
 			previewer = false,
 			prompt_prefix = "",
 			prompt_title = false,
 			theme = "dropdown",
-			-- map l to enter
 			path = "%:p:h",
 			mappings = {
 				["n"] = {
