@@ -10,11 +10,11 @@ To use this them, config.rasi should include a line like this
 * {
     bg-col:  #1e222a;
     bg-col-light: #303742;
-    border-col: #1e222a;
-    selected-col: #181a1f;
+    border-col: #61afef;
+    selected-col: #2c323c;
     blue: #61afef;
     fg-col: #abb2bf;
-    fg-col2: #ffcc00;
+    fg-col2: #ffffff;
     grey: #5c6370;
     width: 500;
 }
