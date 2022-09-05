@@ -1,0 +1,21 @@
+/* vim: ft=rofi
+
+This is a theme file for rofi. As such it does need to have a .rasi extension.
+
+To use this them, config.rasi should include a line like this
+
+@theme '~/path/to/this/file'
+*/
+
+* {
+    bg-col:  #1e222a;
+    bg-col-light: #303742;
+    border-col: #1e222a;
+    selected-col: #181a1f;
+    blue: #61afef;
+    fg-col: #abb2bf;
+    fg-col2: #ffcc00;
+    grey: #5c6370;
+    width: 500;
+}
+

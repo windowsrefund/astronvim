@@ -1,0 +1,86 @@
+# vim: ft=yaml
+color_schemes:
+
+  astronvim: &astronvim
+
+    # Default colors
+    primary:
+      background: '#1e222a' # bg
+      foreground: '#abb2bf' # fg
+      # Bright and dim foreground colors
+      # dim_foreground: '#CAD3F5' # text
+      # bright_foreground: '#CAD3F5' # text
+
+    # Cursor colors
+    cursor:
+      text: '#181a1f'
+      cursor: '#abb2bf'
+    vi_mode_cursor:
+      text: '#181a1f'
+      cursor: '#abb2bf'
+
+    # Search colors
+    search:
+      matches:
+        foreground: '#181a1f'
+        background: '#56b6c2'
+      focused_match:
+        foreground: '#181a1f'
+        background: '#98c379'
+      footer_bar:
+        foreground: '#181a1f'
+        background: '#5c6370'
+
+    # Keyboard regex hints
+    hints:
+      start:
+        foreground: '#1f1f25'
+        background: '#61afef'
+      end:
+        foreground: '#1f1f25'
+        background: '#61afef'
+
+    # Selection colors
+    selection:
+      text: '#1f1f25'
+      background: '#dedede'
+
+    # Normal colors
+    normal:
+      black:   '#181a1f'
+      red:     '#d47d85'
+      green:   '#89b06d'
+      yellow:  '#d1b071'
+      blue:    '#61afef'
+      magenta: '#a9a1e1'
+      cyan:    '#56b6c2'
+      white:   '#afb2bb'
+
+    # Bright colors
+    bright:
+      black:   '#1f1f25'
+      red:     '#e9989e'
+      green:   '#98c379'
+      yellow:  '#e5c07b'
+      blue:    '#90c7f3'
+      magenta: '#c2bdea'
+      cyan:    '#c2bdea'
+      white:   '#c9c9c9'
+
+    # Dim colors
+    # dim:
+    #   black:   '#494D64' # surface1
+    #   red:     '#ED8796' # red
+    #   green:   '#A6DA95' # green
+    #   yellow:  '#EED49F' # yellow
+    #   blue:    '#8AADF4' # blue
+    #   magenta: '#F5BDE6' # pink
+    #   cyan:    '#8BD5CA' # teal
+    #   white:   '#B8C0E0' # subtext1
+
+    indexed_colors:
+      - { index: 16, color: '#d19a66' }
+      - { index: 17, color: '#e5c07b' }
+
+
+colors: *astronvim

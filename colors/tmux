@@ -1,0 +1,16 @@
+# vim: ft=conf
+
+# This file should be imported by tmux.conf before these variables are used elsewhere.
+
+thm_bg="#1e222a"
+thm_fg="#abb2bf"
+thm_cyan="#56b6c2"
+thm_black="#181a1f"
+thm_gray="#5c6370"
+thm_magenta="#c678dd"
+thm_red="#d47d85"
+thm_green="#89b06d"
+thm_yellow="#d1b071"
+thm_blue="#61afef"
+thm_orange="#d19a66"
+thm_white="#c9c9c9"

@@ -1,0 +1,41 @@
+! vim: ft=xresources
+
+! load this file from ~/.xinitrc
+! xrdb ../path/to/this/file
+
+
+
+*background: #1e222a
+*foreground: #abb2bf
+
+! black dark/light
+*color0: #181a1f
+*color8: #1f1f25
+
+! red dark/light
+*color1: #d47d85
+*color9: #e9989e
+
+! green dark/light
+*color2: #89b06d
+*color10: #98c379
+
+! yellow dark/light
+*color3: #d1b071
+*color11: #e5c07b
+
+! Blue
+*color4: #61afef
+*color12: #90c7f3
+
+! magenta
+*color5: #a9a1e1
+*color13: #c2bdea
+
+! cyan
+*color6: #56b6c2
+*color14: #88cbd4
+
+! white dark/light
+*color7: #afb2bb
+*color15: #c9c9c9
