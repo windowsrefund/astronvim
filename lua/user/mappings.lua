@@ -45,7 +45,7 @@ return {
 		["-"] = { "<cmd>Telescope file_browser grouped=true<CR>", desc = "File Browser", silent = true },
 	},
 	i = {
-		["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },
+		-- ["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },
 		["jl"] = { "<C-o>$", desc = "Jump to end of line while in insert mode" },
 	},
 	v = {

@@ -1,4 +1,4 @@
-return {
-  mapping = { "jk" }
-}
-
+-- return {
+-- this will limit the plugin to only jk
+-- mapping = { "jk" }
+-- }
