@@ -17,10 +17,6 @@ return {
 		config = require("user.plugins.run-code"),
 	},
 
-	["hrsh7th/cmp-nvim-lsp-signature-help"] = {
-		config = require("user.plugins.cmp-nvim-lsp-signature-help"),
-	},
-
 	["iamcco/markdown-preview.nvim"] = {
 		ft = "markdown",
 		run = require("user.plugins.markdown-preview"),
@@ -40,9 +36,19 @@ return {
 		requires = "kevinhwang91/promise-async",
 		config = require("user.plugins.nvim-ufo"),
 	},
+
+	["kosayoda/nvim-lightbulb"] = {
+		requires = "antoinemadec/FixCursorHold.nvim",
+		config = require("user.plugins.nvim-lightbulb"),
+	},
+
 	-- not quite ready for these yet but maybe one day?
-	-- ["kevinhwang91/nvim-bqf"] = { ft = "qf", config = require "user.plugins.nvim-bqf" },
+	-- ["hrsh7th/cmp-nvim-lsp-signature-help"] = {
+	-- 	config = require("user.plugins.cmp-nvim-lsp-signature-help"),
+	-- },
 	--
-	-- lost interest in these
-	-- ["catppuccin/nvim"] = { as = "catppuccin", config = require "user.plugins.catppuccin" },
+	-- 	-- ["kevinhwang91/nvim-bqf"] = { ft = "qf", config = require "user.plugins.nvim-bqf" },
+	-- 	--
+	-- 	-- lost interest in these
+	-- 	-- ["catppuccin/nvim"] = { as = "catppuccin", config = require "user.plugins.catppuccin" },
 }
