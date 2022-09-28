@@ -43,6 +43,8 @@ return {
 		},
 		-- fie browser
 		["-"] = { "<cmd>Telescope file_browser grouped=true<CR>", desc = "File Browser", silent = true },
+		["[q"] = { "<cmd>cprev<CR>", desc = "Quickfix prev", silent = true },
+		["]q"] = { "<cmd>cnext<CR>", desc = "Quickfix next", silent = true },
 	},
 	i = {
 		-- ["jj"] = { "<C-o>o", desc = "Skip to a newline in insert mode" },

@@ -26,25 +26,17 @@ return {
 			theme = "dropdown",
 			path = "%:p:h",
 			mappings = {
-				["n"] = {
+				n = {
+					-- disabling what we don't want to see
 					["e"] = false,
-					-- file operations
-					["a"] = fb_actions.create, -- create file/dir at `path` (trailing separator creates dir)
-					["A"] = fb_actions.create_from_prompt, -- like a but then open it
-					["r"] = fb_actions.rename,
-					["m"] = fb_actions.move,
-					["y"] = fb_actions.copy,
-					["d"] = fb_actions.remove,
-					["o"] = fb_actions.open, -- open file/directory with default system application
-					["T"] = fb_actions.toggle_all,
-					["."] = fb_actions.toggle_hidden,
-					-- movement
+					["g"] = false,
+					["<C-D>"] = false, -- preview_scrolling_down
+					["<C-U>"] = false, -- preview_scrolling_up
+					-- my prefs
+					["~"] = fb_actions.goto_home_dir,
+					-- move in and out of directories
 					["h"] = fb_actions.goto_parent_dir,
 					["l"] = actions.select_default,
-					["~"] = fb_actions.goto_home_dir,
-					-- other
-					["="] = fb_actions.change_cwd,
-					["c"] = fb_actions.goto_cwd,
 				},
 			},
 		},
