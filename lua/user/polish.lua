@@ -8,6 +8,14 @@ return function()
 		command = "source <afile> | PackerSync",
 	})
 
+	-- do not show the dap-repl buffer (without this it displays as a tab)
+	vim.api.nvim_create_autocmd("filetype", {
+		pattern = "dap-repl",
+		callback = function(args)
+			vim.api.nvim_buf_set_option(args.buf, "buflisted", false)
+		end,
+	})
+
 	-- set custom filetypes
 	vim.filetype.add({
 		extension = {

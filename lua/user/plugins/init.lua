@@ -1,8 +1,8 @@
 return {
 	-- built-ins
+	["famiu/bufdelete.nvim"] = { disable = true },
 	["goolord/alpha-nvim"] = { disable = true },
 	["p00f/nvim-ts-rainbow"] = { disable = true },
-	["famiu/bufdelete.nvim"] = { disable = true },
 	["nvim-neo-tree/neo-tree.nvim"] = { disable = true },
 
 	-- mine
@@ -70,6 +70,53 @@ return {
 		config = function()
 			require("telescope").load_extension("file_browser")
 		end,
+	},
+
+	["mfussenegger/nvim-dap"] = {
+		module = "dap",
+		-- 	config = function()
+		-- 		vim.fn.sign_define("DapStopped", { text = "", texthl = "DiagnosticWarn" })
+		-- 		vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticInfo" })
+		-- 		vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticError" })
+		-- 		vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DiagnosticInfo" })
+		-- 		vim.fn.sign_define("DapLogPoint", { text = ".>", texthl = "DiagnosticInfo" })
+		-- 	end,
+	},
+
+	["mfussenegger/nvim-dap-python"] = {
+		after = "nvim-dap",
+		config = function()
+			require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+			require("dap-python").test_runner = "pytest"
+		end,
+	},
+
+	["rcarriga/nvim-dap-ui"] = {
+		after = "nvim-dap",
+		config = function()
+			require("dapui").setup()
+			-- add listeners to auto open DAP UI
+			-- dap.listeners.after.event_initialized["dapui_config"] = function()
+			-- 	dapui.open()
+			-- end
+			-- dap.listeners.before.event_terminated["dapui_config"] = function()
+			-- 	dapui.close()
+			-- end
+			-- dap.listeners.before.event_exited["dapui_config"] = function()
+			-- 	dapui.close()
+			-- end
+		end,
+	},
+
+	["theHamsta/nvim-dap-virtual-text"] = {
+		after = "nvim-dap",
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end,
+	},
+
+	["nvim-telescope/telescope-dap.nvim"] = {
+		after = "telescope.nvim",
 	},
 
 	-- not quite ready for these yet but maybe one day?

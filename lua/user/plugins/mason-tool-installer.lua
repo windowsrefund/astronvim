@@ -1,10 +1,10 @@
 return {
-  ensure_installed = {
-    "autopep8",
-    "debugpy", -- something related to DAP
-    "flake8",
-    "shellcheck",
-    "shfmt",
-    "stylua",
-  }
+	ensure_installed = {
+		"autopep8",
+		"debugpy", -- pythonn debug adapter
+		"flake8",
+		"shellcheck",
+		"shfmt",
+		"stylua",
+	},
 }
