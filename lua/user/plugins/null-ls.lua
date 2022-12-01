@@ -3,28 +3,22 @@ return {
 	sources = {
 		null_ls.builtins.code_actions.gitsigns,
 		null_ls.builtins.code_actions.shellcheck,
-		-- Check supported formatters
+		-- Supported formatters
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-		null_ls.builtins.formatting.autopep8,
-		null_ls.builtins.formatting.terraform_fmt,
 		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.terraform_fmt,
 		null_ls.builtins.formatting.shfmt,
-		-- Check supported linters
-		-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-		null_ls.builtins.diagnostics.flake8.with({
-			extra_args = { "--ignore=W391" },
+		-- python formatters
+		null_ls.builtins.formatting.isort,
+		null_ls.builtins.formatting.black.with({
+			extra_args = { "--line-length=79" },
 		}),
+		-- Supported linters
+		-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 		null_ls.builtins.diagnostics.shellcheck,
+		null_ls.builtins.diagnostics.flake8.with({
+			-- ignore "line too long"
+			extra_args = { "--ignore=E501" },
+		}),
 	},
-	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				desc = "Auto format before save",
-				pattern = "<buffer>",
-				callback = function()
-					vim.lsp.buf.formatting_sync()
-				end,
-			})
-		end
-	end,
 }

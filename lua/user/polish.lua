@@ -16,6 +16,12 @@ return function()
 		end,
 	})
 
+	-- format terraform files
+	vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+		pattern = { "*.tf", "*.tfvars" },
+		callback = vim.lsp.buf.formatting_sync,
+	})
+
 	-- set custom filetypes
 	vim.filetype.add({
 		extension = {

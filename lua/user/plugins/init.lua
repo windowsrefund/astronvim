@@ -47,24 +47,6 @@ return {
 		end,
 	},
 
-	["kevinhwang91/nvim-ufo"] = {
-		requires = "kevinhwang91/promise-async",
-		config = function()
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.foldingRange = {
-				dynamicRegistration = false,
-				lineFoldingOnly = true,
-			}
-			local servers = { "yamlls" } -- like {'gopls', 'clangd'}
-			for _, ls in ipairs(servers) do
-				require("lspconfig")[ls].setup({
-					capabilities = capabilities,
-				})
-			end
-			require("ufo").setup()
-		end,
-	},
-
 	["nvim-telescope/telescope-file-browser.nvim"] = {
 		after = "telescope.nvim",
 		config = function()
